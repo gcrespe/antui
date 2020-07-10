@@ -46,7 +46,7 @@ const InformacoesIniciais = () => {
                 </View>
                 <View style={{width: largura*0.30}}>
                     <Text style={{marginLeft: largura*0.02, marginBottom: altura*0.01, marginTop: altura*0.02}}> Parcelas </Text>    
-                    <InputItem style={{opacity: 0.5}}/>
+                    <InputItem style={{opacity: 0.5}} placeholder={"Ex.: 5"}/>
                 </View>
             </View>
          </View>

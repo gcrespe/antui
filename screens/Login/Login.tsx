@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 
 import {Text, Dimensions, StyleSheet, View, Image} from 'react-native';
 
-import {InputItem, Switch, Button} from '@ant-design/react-native'
+import {InputItem, Switch, Button, List} from '@ant-design/react-native'
 
 import LinearGradient from 'react-native-linear-gradient';
 
@@ -23,6 +23,8 @@ const LoginComponent = (props: Props) => {
   
   let [checked, setChecked] = useState<boolean>(false);
   let [loading, setLoading] = useState<boolean>(false)
+
+  let[defaultValue, setDefaultValue] = useState<string>('123.456.789-10')
 
   const navigation = props.navigation
 
@@ -52,7 +54,11 @@ const LoginComponent = (props: Props) => {
         </View>
         <View style={style.inputView}>
           <Text style={style.inputViewText}> CPF </Text>
-          <InputItem style={style.inputStyle}/>
+          <InputItem 
+            type={"numbers-and-punctuation"}
+            style={style.inputStyle}
+            defaultValue={defaultValue}
+            onFocus={() => setDefaultValue('')}/>
         </View>
         <View style={style.textView}>
           <Text style={style.defaultText}> Lembrar meu CPF </Text>
@@ -105,6 +111,7 @@ const style = StyleSheet.create({
     width: largura * 0.7,
     justifyContent: 'center',
     color: '#ffffff',
+    opacity: 0.7,
   },
   btnLogin: {
     width: largura * 0.7,

@@ -45,7 +45,7 @@ const Auth = (props: Props) => {
 
         setTimeout(() => {
             if(password < 6){
-                Toast.info('A senha deve possuir 6 caracteres', 2)
+                Toast.fail('A senha deve possuir 6 caracteres', 2)
             }else{
                 navigation.navigate("Home")  
             }

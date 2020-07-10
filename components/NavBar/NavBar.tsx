@@ -16,7 +16,8 @@ const NavBar = () => {
           </View>
         </TouchableOpacity>
         <View style={style.navBarLogo}>
-          <Image source={require('../../assets/img/logo.png')}/>
+          <Image source={require('../../assets/img/logo2.png')}/>
+          <Text style={{color: "orange", textAlignVertical: "center"}}>Giuliano Crespe</Text>
         </View>
         <TouchableOpacity>
           <View style={style.settingsButton}>
@@ -53,10 +54,11 @@ const style = StyleSheet.create({
     alignItems: 'center'
   },
   navBarLogo:{
+    flexDirection: 'column',
     alignSelf: 'center',
     height: altura/10,
     width: largura*3/5,
     alignItems: "center",
-    justifyContent: "center"
+    justifyContent: "center",
   }
 })

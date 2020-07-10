@@ -1,7 +1,7 @@
 import React from 'react';
-import LoginComponent from './components/LoginComponent/LoginComponent';
-import Auth from './components/Auth/Auth';
-import Home from './components/Home/Home';
+import LoginComponent from './screens/Login/Login';
+import Auth from './screens/Login2/Login2';
+import Home from './screens/Home/Home';
 import {createStackNavigator} from 'react-navigation-stack';
 import { createAppContainer } from 'react-navigation';
 

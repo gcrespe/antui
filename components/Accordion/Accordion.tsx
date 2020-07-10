@@ -8,7 +8,7 @@ const largura = Dimensions.get('screen').width;
 
 const AccordionHome = () => { 
 
-    let [activeSections, setActiveSection] = useState<number[]>();
+    let [activeSections, setActiveSection] = useState<number[]>([]);
 
     
     const accordionOnChange = (activeSections: number[]) => { 
@@ -21,9 +21,7 @@ const AccordionHome = () => {
                    activeSections={activeSections}> 
             <Accordion.Panel header="OUTRAS INFORMAÇÕES">
                 <List> 
-                    <List.Item>
-                        Não existem informações adicionais
-                    </List.Item>
+                    <List.Item>Não existem outras informações</List.Item>
                 </List>
             </Accordion.Panel>
         </Accordion>
