@@ -175,7 +175,7 @@ const style = StyleSheet.create({
     viewTitle: {
         alignContent: "center", 
         justifyContent: "center",
-         alignSelf: "center", 
+        alignSelf: "center", 
     },
     circlesView: {
         flex: 0,

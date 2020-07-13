@@ -4,7 +4,7 @@ import NavBar from '../../components/NavBar/NavBar'
 import Accordion from '../../components/Accordion/Accordion'
 import CalcularHome from '../../components/calcularHome/CalcularHome'
 import InformacoesIniciais from '../../components/InformacoesIniciais/InformacoesIniciais'
-
+import DrawerHome from '../../components/Drawer/Drawer'
 import {Button} from '@ant-design/react-native'
 
 import {
@@ -28,6 +28,7 @@ const Home = (props: Props) => {
     return(
         <ScrollView>
             <View style={style.viewHome}>
+                <DrawerHome/>
                 <NavBar />
                 <InformacoesIniciais/>
                 <Accordion/>    
@@ -57,7 +58,7 @@ const style = StyleSheet.create({
        width: largura,
        flex: 1,
        flexDirection: 'column',
-       backgroundColor: '#FFFFFF'
+       backgroundColor: '#FFFFFF',
    },
    btnCalcular: {
     width: largura * 0.85,

@@ -36,7 +36,7 @@ const CalcularHome = () =>  {
                     }
                     }}
                     style={{width: largura*0.9, alignSelf: "center"}}>
-                        99 x R$9.999,00
+                        60 x R$19.999,00
                 </RadioItem>
                 <RadioItem
                     checked={part2value === 3}
@@ -46,7 +46,7 @@ const CalcularHome = () =>  {
                     }
                     }}
                     style={{width: largura*0.9, alignSelf: "center"}}>
-                        99 x R$9.999,00
+                        48 x R$22.999,00
                 </RadioItem>
                 <RadioItem
                     checked={part2value === 4}
@@ -56,7 +56,7 @@ const CalcularHome = () =>  {
                     }
                     }}
                     style={{width: largura*0.9, alignSelf: "center"}}>
-                        99 x R$9.999,00
+                        36 x R$25.999,00
                 </RadioItem>
                 <RadioItem
                     checked={part2value === 5}
@@ -66,7 +66,7 @@ const CalcularHome = () =>  {
                     }
                     }}
                     style={{width: largura*0.9, alignSelf: "center"}}>
-                        99 x R$9.999,00
+                        24 x R$28.999,00
                 </RadioItem>
             </List>
         </View> 

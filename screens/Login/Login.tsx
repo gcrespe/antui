@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 
 import {Text, Dimensions, StyleSheet, View, Image} from 'react-native';
 
-import {InputItem, Switch, Button, List} from '@ant-design/react-native'
+import {InputItem, Switch, Button} from '@ant-design/react-native'
 
 import LinearGradient from 'react-native-linear-gradient';
 
@@ -118,7 +118,7 @@ const style = StyleSheet.create({
     height: altura / 20,
     backgroundColor: '#6c757d',
     borderColor: '#6c757d',
-    color: '#ffffff',
+    color: '#FFFFFF',
     
   },
   defaultText: {

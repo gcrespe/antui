@@ -29,10 +29,9 @@ const InformacoesIniciais = () => {
                 <View style={{marginTop: 8}}>
                     <Slider min={0} max={1000}
                         minimumTrackTintColor="orange"
-                        maximumTrackTintColor="blue"
-                        step={10}
-                        onChange={(value) => handleSliderValue(value)}
-                        />
+                        maximumTrackTintColor="grey"
+                        step={1}
+                        onChange={(value) => handleSliderValue(value)}/>
                 </View>
             </View>
             <View style={style.viewGeral1}>

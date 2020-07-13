@@ -1,6 +1,6 @@
 import React from 'react'
 import { Text, View, StyleSheet, Dimensions, Image} from 'react-native'
-import { Drawer, Flex, Button, Icon } from '@ant-design/react-native' 
+
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 
@@ -10,14 +10,12 @@ const largura = Dimensions.get('screen').width;
 const NavBar = () => {
   return (
       <View style={style.navBar}>
-        <TouchableOpacity>
           <View style={style.drawerButton}>
-            <Image source={require('../../assets/img/drawer-icon.png')} style={{width: largura/20, height: altura/20}} />
+            {/* Espaço para o icone do drawer*/}
           </View>
-        </TouchableOpacity>
         <View style={style.navBarLogo}>
           <Image source={require('../../assets/img/logo2.png')}/>
-          <Text style={{color: "orange", textAlignVertical: "center"}}>Giuliano Crespe</Text>
+          <Text style={{color: "#ffcc00", textAlignVertical: "center"}}>Giuliano Crespe</Text>
         </View>
         <TouchableOpacity>
           <View style={style.settingsButton}>
