@@ -11,7 +11,7 @@ const NavBar = () => {
   return (
       <View style={style.navBar}>
           <View style={style.drawerButton}>
-            {/* Espaço para o icone do drawer*/}
+            
           </View>
         <View style={style.navBarLogo}>
           <Image source={require('../../assets/img/logo2.png')}/>
@@ -36,7 +36,7 @@ const style = StyleSheet.create({
     width: largura,
     height: altura/10,
     justifyContent: "space-between",
-    backgroundColor: '#0e1371'
+    backgroundColor: '#0e1371',
   },
   drawerButton: {
     width: largura/5,

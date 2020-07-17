@@ -9,8 +9,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import {
     NavigationParams,
     NavigationScreenProp,
-    NavigationState, 
-    NavigationContext} from 'react-navigation';
+    NavigationState} from 'react-navigation';
 
 interface Props {
     navigation: NavigationScreenProp<NavigationState, NavigationParams>;
@@ -56,46 +55,59 @@ const Auth = (props: Props) => {
             setLoading(false)            
         }, 1000);
 
-        
-
     }
 
     return(
-        <Provider>
+        <Provider>{/* O provider é necessário para que se possa usar o Toast*/}
+
+            {/* GRADIENT */}
+
             <LinearGradient
             colors={['#0e1371','#0e1371', '#1a1fb8']}
             style={{width: largura, height: altura}}>
                 <View style={style.homeView}>
+
+                    {/* OUTLINE BOX*/}
+
                     <View style={style.outlineView}/>
                     <View style={style.viewTitle}>
                             <Text style={style.titleAutenticacao}> AUTENTICAÇÃO </Text>
                     </View>
+
+                    {/* 6 DIGIT PASSWORD VIEW */}
+
                     <View style={style.circlesView}>
-                        {password >= 1 &&  1 ? <Image source={require('../../assets/img/circle-fulfilled.png')} style={{width: 20, height: 20, marginHorizontal: 4, borderWidth: 1, borderColor: "#FFFFFF", borderRadius: 50, opacity: 0.9}}/>
-                            : <Image source={require('../../assets/img/circle.png')} style={{width: 20, height: 20, marginHorizontal: 4, borderWidth: 1, borderColor: "#FFFFFF", borderRadius: 50, opacity: 0.7}}/>}
-                        {password >= 2 &&  1 ? <Image source={require('../../assets/img/circle-fulfilled.png')} style={{width: 20, height: 20, marginHorizontal: 4, borderWidth: 1, borderColor: "#FFFFFF", borderRadius: 50, opacity: 0.9}}/>
-                            : <Image source={require('../../assets/img/circle.png')} style={{width: 20, height: 20, marginHorizontal: 4, borderWidth: 1, borderColor: "#FFFFFF", borderRadius: 50, opacity: 0.7}}/>}
-                        {password >= 3 &&  1 ? <Image source={require('../../assets/img/circle-fulfilled.png')} style={{width: 20, height: 20, marginHorizontal: 4, borderWidth: 1, borderColor: "#FFFFFF", borderRadius: 50, opacity: 0.9}}/>
-                            : <Image source={require('../../assets/img/circle.png')} style={{width: 20, height: 20, marginHorizontal: 4, borderWidth: 1, borderColor: "#FFFFFF", borderRadius: 50, opacity: 0.7}}/>}
-                        {password >= 4 &&  1 ? <Image source={require('../../assets/img/circle-fulfilled.png')} style={{width: 20, height: 20, marginHorizontal: 4, borderWidth: 1, borderColor: "#FFFFFF", borderRadius: 50, opacity: 0.9}}/>
-                            : <Image source={require('../../assets/img/circle.png')} style={{width: 20, height: 20, marginHorizontal: 4, borderWidth: 1, borderColor: "#FFFFFF", borderRadius: 50, opacity: 0.7}}/>}
-                        {password >= 5 &&  1 ? <Image source={require('../../assets/img/circle-fulfilled.png')} style={{width: 20, height: 20, marginHorizontal: 4, borderWidth: 1, borderColor: "#FFFFFF", borderRadius: 50, opacity: 0.9}}/>
-                            : <Image source={require('../../assets/img/circle.png')} style={{width: 20, height: 20, marginHorizontal: 4, borderWidth: 1, borderColor: "#FFFFFF", borderRadius: 50, opacity: 0.7}}/>}
-                        {password >= 6 &&  1 ? <Image source={require('../../assets/img/circle-fulfilled.png')} style={{width: 20, height: 20, marginHorizontal: 4, borderWidth: 1, borderColor: "#FFFFFF", borderRadius: 50, opacity: 0.9}}/>
-                            : <Image source={require('../../assets/img/circle.png')} style={{width: 20, height: 20, marginHorizontal: 4, borderWidth: 1, borderColor: "#FFFFFF", borderRadius: 50, opacity: 0.7}}/>}
+                        {password >= 1 &&  1 ? <Image source={require('../../assets/img/circle-fulfilled.png')} style={style.passwordBallStyleFullfilled}/>
+                            : <Image source={require('../../assets/img/circle.png')} style={style.passwordBallStyle}/>}
+                        {password >= 2 &&  1 ? <Image source={require('../../assets/img/circle-fulfilled.png')} style={style.passwordBallStyleFullfilled}/>
+                            : <Image source={require('../../assets/img/circle.png')} style={style.passwordBallStyle}/>}
+                        {password >= 3 &&  1 ? <Image source={require('../../assets/img/circle-fulfilled.png')} style={style.passwordBallStyleFullfilled}/>
+                            : <Image source={require('../../assets/img/circle.png')} style={style.passwordBallStyle}/>}
+                        {password >= 4 &&  1 ? <Image source={require('../../assets/img/circle-fulfilled.png')} style={style.passwordBallStyleFullfilled}/>
+                            : <Image source={require('../../assets/img/circle.png')} style={style.passwordBallStyle}/>}
+                        {password >= 5 &&  1 ? <Image source={require('../../assets/img/circle-fulfilled.png')} style={style.passwordBallStyleFullfilled}/>
+                            : <Image source={require('../../assets/img/circle.png')} style={style.passwordBallStyle}/>}
+                        {password >= 6 &&  1 ? <Image source={require('../../assets/img/circle-fulfilled.png')} style={style.passwordBallStyleFullfilled}/>
+                            : <Image source={require('../../assets/img/circle.png')} style={style.passwordBallStyle}/>}
                     </View>
+
+                    {/* PASSWORD BUTTONS VIEW*/}
+
                     <View style={style.senhaView}>
                         <View style={style.senhaButtons}> 
-                            <Button style={style.senhaButton} onPress={() => handlePasswordDigit()}><Text style={{color: "#FFFFFF", fontSize: 15, fontWeight: "bold"}}>1 OU 4</Text></Button>
-                            <Button style={style.senhaButton} onPress={() => handlePasswordDigit()}><Text style={{color: "#FFFFFF", fontSize: 15, fontWeight: "bold"}}>5 OU 7</Text></Button>
-                            <Button style={style.senhaButton} onPress={() => handlePasswordDigit()}><Text style={{color: "#FFFFFF", fontSize: 15, fontWeight: "bold"}}>8 OU 3</Text></Button>
+                            <Button style={style.senhaButton} onPress={() => handlePasswordDigit()}><Text style={style.textSenhaButton}>1 OU 4</Text></Button>
+                            <Button style={style.senhaButton} onPress={() => handlePasswordDigit()}><Text style={style.textSenhaButton}>5 OU 7</Text></Button>
+                            <Button style={style.senhaButton} onPress={() => handlePasswordDigit()}><Text style={style.textSenhaButton}>8 OU 3</Text></Button>
                         </View>
                         <View style={style.senhaButtons}> 
-                            <Button style={style.senhaButton} onPress={() => handlePasswordDigit()}><Text style={{color: "#FFFFFF", fontSize: 15, fontWeight: "bold"}}>2 OU 9</Text></Button>
-                            <Button style={style.senhaButton} onPress={() => handlePasswordDigit()}><Text style={{color: "#FFFFFF", fontSize: 15, fontWeight: "bold"}}>6 OU 0</Text></Button>
+                            <Button style={style.senhaButton} onPress={() => handlePasswordDigit()}><Text style={style.textSenhaButton}>2 OU 9</Text></Button>
+                            <Button style={style.senhaButton} onPress={() => handlePasswordDigit()}><Text style={style.textSenhaButton}>6 OU 0</Text></Button>
                             <Button style={style.deleteButton} onPress={() => handlePasswordDelete()}><Image source={require('../../assets/img/backspace.png')} style={{width: 20, height: 15, marginBottom: 5}}/></Button>
                         </View>
                         <View style={style.principalButtons}>
+
+                            {/* LOGIN BUTTON & LOADING BUTTON*/}
+
                             <Button style={style.entraButton} onPress={() => navigation.navigate("Login")}><Text style={{color: "#FFFFFF", fontWeight: "bold"}}>VOLTAR</Text></Button>
                             {loading && 1 ? 
                                 <Button loading disabled style={{marginHorizontal: 5, width: largura/3.3, height: altura/20}}/>
@@ -193,5 +205,28 @@ const style = StyleSheet.create({
         height: altura/22,
         backgroundColor: '#6c757d',
         borderColor: '#6c757d',
+    },
+    passwordBallStyleFullfilled: {
+        width: 20, 
+        height: 20, 
+        marginHorizontal: 4, 
+        borderWidth: 1, 
+        borderColor: "#FFFFFF", 
+        borderRadius: 50, 
+        opacity: 0.9
+    },
+    passwordBallStyle: {
+        width: 20, 
+        height: 20, 
+        marginHorizontal: 4, 
+        borderWidth: 1, 
+        borderColor: "#FFFFFF", 
+        borderRadius: 50, 
+        opacity: 0.7
+    },
+    textSenhaButton: {
+        color: "#FFFFFF", 
+        fontSize: 15, 
+        fontWeight: "bold"
     }
 })
