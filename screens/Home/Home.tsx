@@ -47,9 +47,8 @@ const Home = (props: Props) => {
                         <Button style={style.btnCalcular}><Text style={{color: '#FFFFFF'}}>SALVAR PRÉ-SIMULAÇÃO</Text></Button>
                     </View>
                 </View>
-                
+                <DrawerHome/>
             </View>
-            <DrawerHome/>
         </ScrollView>
     );
 };

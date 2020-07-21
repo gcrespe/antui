@@ -7,7 +7,9 @@ const largura = Dimensions.get('screen').width;
 
 function DrawerHome(){
 
-    let [open, setOpen] = useState<boolean>(false)
+    let [open, setOpen] = useState<boolean>(false)  
+    let [alturaD, setAlturaD] = useState<number>(50)
+    let [larguraD, setLarguraD] = useState<number>(50)
 
     const sidebar = (
         <View> 
@@ -17,7 +19,7 @@ function DrawerHome(){
             <TouchableOpacity>
                 <View style={{width: largura*0.762, height: altura*0.07, marginLeft: largura*0.1, flexDirection: "row"}}> 
                     <Icon name="bank" size="md" color="white" style={{marginRight: 20}} />
-                    <Text style={{color: "#ffffff", fontSize: 16}}>Detalhes da conta</Text>
+                    <Text style={{color: "#ffffff", fontSize: 16}}>Detalhes da conta {open}</Text>
                 </View>
             </TouchableOpacity>
             <TouchableOpacity>
@@ -32,25 +34,52 @@ function DrawerHome(){
                     <Text style={{color: "#ffffff", fontSize: 16}}>Configurações</Text>
                 </View>
             </TouchableOpacity>
-            <Button style={{width: largura*0.2, height: altura*0.04, alignSelf: "center", backgroundColor: "#0e1371", marginTop: altura*0.43}} onPress={() => setOpen(false)}><Text style={{color: "#FFFFFF", fontSize: 12}}>CLOSE</Text></Button>
+    <Button style={{width: largura*0.2, height: altura*0.04, alignSelf: "center", backgroundColor: "#0e1371", marginTop: altura*0.43}} onPress={() => onOpenChange()}><Text style={{color: "#FFFFFF", fontSize: 12}}>CLOSE</Text></Button>
         </View>
     );
+
+    function onOpenChange(){
+        setOpen(!open)
+        if(open == true){
+            setTimeout(() => {
+                setAlturaD(50)
+                setLarguraD(50)
+            }, 400)   
+        }else if(!open){
+            setAlturaD(altura)
+            setLarguraD(largura)
+        }
+                 
+    }
+    
     return (
-        <View style={{position: "absolute"}}>
+        open ? (
+            <View style={{position: "absolute", width: largura, height: altura*1.5}}>
+                <Drawer
+                    sidebar={sidebar}
+                    position="left"
+                    open={open}
+                    drawerBackgroundColor="#0e1371">
+                        <View style={style.drawerButton}>
+                            <TouchableOpacity onPress={() => onOpenChange()}>
+                                <Image source={require('../../assets/img/drawer-icon.png')} style={{width: largura/20, height: altura/20}} />
+                            </TouchableOpacity>
+                        </View>
+                </Drawer>
+            </View>)    
+        : (<View style={{position: "absolute", width: larguraD, height: alturaD}}>
             <Drawer
                 sidebar={sidebar}
                 position="left"
                 open={open}
                 drawerBackgroundColor="#0e1371">
-                <View style={{height: altura*2, width: largura}}>
-                        <View style={style.drawerButton}>
-                            <TouchableOpacity onPress={() => setOpen(true)}>
-                                <Image source={require('../../assets/img/drawer-icon.png')} style={{width: largura/20, height: altura/20}} />
-                            </TouchableOpacity>
-                        </View>
+                    <View style={style.drawerButton}>
+                        <TouchableOpacity onPress={() => onOpenChange()}>
+                            <Image source={require('../../assets/img/drawer-icon.png')} style={{width: largura/20, height: altura/20}} />
+                        </TouchableOpacity>
                     </View>
             </Drawer>
-        </View>
+        </View>)
     );
 }
 
